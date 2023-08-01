@@ -32,8 +32,8 @@ ThemeData basicTheme() => ThemeData(
       //bottomNavigationBarTheme
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-        unselectedIconTheme: defaultIconThemeData.copyWith(size: 25.0),
-        selectedIconTheme: defaultIconThemeData.copyWith(size: 25.0),
+        // unselectedIconTheme: defaultIconThemeData.copyWith(size: 25.0),
+        // selectedIconTheme: defaultIconThemeData.copyWith(size: 25.0),
         backgroundColor: kBackgroundColor,
         selectedItemColor: kSecondaryColor,
         showSelectedLabels: false,
