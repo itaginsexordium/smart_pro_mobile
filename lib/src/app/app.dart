@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:lit_starfield/view/lit_starfield_container.dart';
 import 'package:smart_pro/src/app/presentation/scaffold/widgets/AppBottomNavigationBar.dart';
 import 'package:smart_pro/src/theme/theme.dart';
 
@@ -26,54 +28,43 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: SvgPicture.asset('assets/logo.svg'),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search_rounded),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu),
-          )
+          Builder(builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: const Icon(TablerIcons.search),
+            );
+          }),
+          Builder(builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+              icon: const Icon(TablerIcons.menu),
+            );
+          }),
         ],
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            OutlinedCardExample(),
-          ],
-        ),
+      drawer: Drawer(),
+      endDrawer: Drawer(),
+      body: Stack(
+        children: [
+          LitStarfieldContainer(
+            // animated: true,
+            number: 500,
+            backgroundDecoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: const AppBottomNavigationBar(),
-    );
-  }
-}
-
-class OutlinedCardExample extends StatelessWidget {
-  const OutlinedCardExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: Theme.of(context).colorScheme.outline,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
-        ),
-        child: SizedBox(
-          width: 300,
-          height: 100,
-          child: Center(child: SvgPicture.asset('assets/logo.svg')),
-        ),
-      ),
     );
   }
 }

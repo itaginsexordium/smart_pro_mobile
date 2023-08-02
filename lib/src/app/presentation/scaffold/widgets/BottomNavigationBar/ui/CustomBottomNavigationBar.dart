@@ -9,7 +9,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
   CustomBottomNavigationBar({
     required this.items,
     this.currentIndex = 0,
-    this.height = 35.0,
+    this.height = 40.0,
     this.backgroundColor = const Color(0xFF191919),
     this.padding = EdgeInsets.zero,
     this.curve = Curves.linear,

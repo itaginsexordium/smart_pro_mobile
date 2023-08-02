@@ -13,6 +13,8 @@ dependencies:
   flutter_bloc: ^8.1.3
   go_router: ^10.0.0
   flutter_svg: ^2.0.7
+  flutter_tabler_icons: ^1.2.0
+  lit_starfield: ^0.1.1
 
 dev_dependencies:
   flutter_test:

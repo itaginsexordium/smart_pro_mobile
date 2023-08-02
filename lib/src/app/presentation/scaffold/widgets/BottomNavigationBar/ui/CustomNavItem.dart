@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_pro/src/app/presentation/scaffold/widgets/BottomNavigationBar/data/MBottomNavigationBarItem.dart';
 
 class CustomNavItem extends StatelessWidget {
-   CustomNavItem(
+  CustomNavItem(
       {required this.item,
       required this.selected,
       required this.height,

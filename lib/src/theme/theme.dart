@@ -39,4 +39,6 @@ ThemeData basicTheme() => ThemeData(
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
+
+      drawerTheme: DrawerThemeData(backgroundColor: kBackgroundColor)
     );
