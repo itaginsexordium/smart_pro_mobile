@@ -53,13 +53,44 @@ class CustomNavItem extends StatelessWidget {
                   : const Border(
                       top: BorderSide(color: Colors.transparent, width: 0)),
             ),
-            child: Icon(
-              selected ? item.selectedIcon : item.unSelectedIcon,
-              size: selected ? item.size : item.size - 5,
-              color: selected
-                  ? item.selectedIconColor
-                  : item.unSelectedIconColor.withOpacity(0.5),
-            ),
+            child: item.title.isNotEmpty
+                ? Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 5, bottom: 2),
+                    child: ElevatedButton(
+                      onPressed: changeIndex,
+                      style: ElevatedButton.styleFrom(
+                        textStyle: TextStyle(fontSize: 10, color: Colors.black),
+                        backgroundColor: item.borderBottomColor,
+                        padding: EdgeInsets.all(10.0),
+                        maximumSize: Size(double.infinity, double.infinity),
+                        side: BorderSide(
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            selected ? item.selectedIcon : item.unSelectedIcon,
+                            size: selected ? item.size : item.size - 5,
+                            color: Colors.black,
+                          ),
+                          SizedBox(width: 2),
+                          Text(
+                            item.title,
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : Icon(
+                    selected ? item.selectedIcon : item.unSelectedIcon,
+                    size: selected ? item.size : item.size - 5,
+                    color: selected
+                        ? item.selectedIconColor
+                        : item.unSelectedIconColor.withOpacity(0.5),
+                  ),
           ),
         ),
       ),

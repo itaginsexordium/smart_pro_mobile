@@ -6,6 +6,7 @@ class MBottomNavigationBarItem {
   const MBottomNavigationBarItem(
       {this.unSelectedIcon = Icons.star_border_outlined,
       this.selectedIcon = Icons.star,
+      this.title = '',
       this.size = 30,
       this.selectedIconColor = Colors.white,
       this.unSelectedIconColor = Colors.white54,
@@ -35,6 +36,9 @@ class MBottomNavigationBarItem {
 
   ///[selectedIcon] The icon of the tab when tab is selected.
   final IconData selectedIcon;
+
+  /////[title] for custom btn 
+  final String title;
 
   ///[size] The size of the tab.
   final double size;

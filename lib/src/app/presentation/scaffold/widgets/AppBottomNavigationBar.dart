@@ -35,6 +35,7 @@ class AppBottomNavigationBar extends StatelessWidget {
           backgroundShadowColor: Theme.of(context).primaryColor,
         ),
         MBottomNavigationBarItem(
+          title: 'войти',
           unSelectedIcon: TablerIcons.user_circle,
           selectedIcon: TablerIcons.user_circle,
           splashColor: Theme.of(context).primaryColor,
