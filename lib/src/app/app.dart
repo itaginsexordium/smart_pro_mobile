@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
@@ -62,6 +64,43 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
+          Center(
+              child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Container(
+              width: 350,
+              height: 400,
+              // color: Colors.white,
+              child: Stack(
+                children: [
+                  //blur effect
+                  BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+                    child: Container(),
+                  ),
+                  // gradient effect
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.8, 1),
+                            colors: [
+                              Color.fromRGBO(249, 249, 249, 0.7),
+                              Color.fromRGBO(196, 196, 196, 0.14)
+                            ])),
+                  ),
+                  //child
+                  Center(
+                    child: Text('text'),
+                  )
+                ],
+              ),
+            ),
+          ))
         ],
       ),
       bottomNavigationBar: const AppBottomNavigationBar(),

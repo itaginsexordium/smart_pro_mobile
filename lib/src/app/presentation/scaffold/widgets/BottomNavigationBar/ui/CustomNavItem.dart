@@ -56,11 +56,11 @@ class CustomNavItem extends StatelessWidget {
             child: item.title.isNotEmpty
                 ? Padding(
                     padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 5, bottom: 2),
+                        left: 15, right: 15, top: 5 , bottom: 5),
                     child: ElevatedButton(
                       onPressed: changeIndex,
                       style: ElevatedButton.styleFrom(
-                        textStyle: TextStyle(fontSize: 10, color: Colors.black),
+                        textStyle: TextStyle(fontSize: 5, color: Colors.black),
                         backgroundColor: item.borderBottomColor,
                         padding: EdgeInsets.all(10.0),
                         maximumSize: Size(double.infinity, double.infinity),
@@ -72,7 +72,7 @@ class CustomNavItem extends StatelessWidget {
                         children: [
                           Icon(
                             selected ? item.selectedIcon : item.unSelectedIcon,
-                            size: selected ? item.size : item.size - 5,
+                            size: selected ? item.size - 10 : item.size - 10,
                             color: Colors.black,
                           ),
                           SizedBox(width: 2),
