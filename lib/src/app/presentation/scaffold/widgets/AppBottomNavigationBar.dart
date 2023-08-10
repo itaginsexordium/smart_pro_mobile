@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:smart_pro/src/app/bloc/navigatorBloc/navigator_bloc.dart';
 import 'package:smart_pro/src/app/presentation/scaffold/widgets/BottomNavigationBar/data/MBottomNavigationBarItem.dart';
 import 'package:smart_pro/src/app/presentation/scaffold/widgets/BottomNavigationBar/ui/CustomBottomNavigationBar.dart';
 
@@ -45,6 +47,7 @@ class AppBottomNavigationBar extends StatelessWidget {
       ],
       onSelected: (index) {
         print('tab $index');
+        context.read<NavigatorBloc>().add(ChangePage(index));
       },
     );
   }

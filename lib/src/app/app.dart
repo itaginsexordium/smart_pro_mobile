@@ -6,6 +6,7 @@ import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:lit_starfield/view/lit_starfield_container.dart';
 import 'package:smart_pro/src/app/presentation/common/cards/GlassCard.dart';
 import 'package:smart_pro/src/app/presentation/scaffold/widgets/AppBottomNavigationBar.dart';
+import 'package:smart_pro/src/app/presentation/scaffold/widgets/AppScaffold.dart';
 import 'package:smart_pro/src/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: basicTheme(),
-      home: const MyHomePage(),
+      home: AppScaffold(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -54,7 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
         ],
       ),
-      drawer: Drawer(),
       endDrawer: Drawer(),
       body: Stack(
         children: [

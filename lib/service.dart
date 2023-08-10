@@ -1,14 +1,19 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_pro/src/app/app.dart';
+import 'package:smart_pro/src/app/bloc/navigatorBloc/navigator_bloc.dart';
 
- class ServiceBuild extends StatelessWidget {
+class ServiceBuild extends StatelessWidget {
   const ServiceBuild({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const App();
+    return MultiRepositoryProvider(
+        providers: [BlocProvider(create: (_) => NavigatorBloc())],
+        child: App());
+
+    // const App();
 
     // MultiBlocProvider(
     //     providers:  [
