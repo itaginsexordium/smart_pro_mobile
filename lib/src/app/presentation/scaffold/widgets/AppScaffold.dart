@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:smart_pro/src/app/bloc/navigatorBloc/navigator_bloc.dart';
+import 'package:smart_pro/src/app/presentation/scaffold/widgets/AppSearchBar.dart';
 
 import 'AppBottomNavigationBar.dart';
 
@@ -20,7 +21,7 @@ class AppScaffold extends StatelessWidget {
             Builder(builder: (context) {
               return IconButton(
                 onPressed: () {
-                  Scaffold.of(context).openEndDrawer();
+                  showSearch(context: context, delegate: AppSearchDelegate());
                 },
                 icon: const Icon(TablerIcons.search),
               );
@@ -39,7 +40,7 @@ class AppScaffold extends StatelessWidget {
         body: Center(child: BlocBuilder<NavigatorBloc, NavigatorMainState>(
           builder: (context, state) {
             return switch (state) {
-              NavigatorHome() => Text('zalupa'),
+              NavigatorHome() => Text('home'),
               NavigatorCart() => Text('cart'),
               NavigatorProfile() => Text('profile'),
               NavigatorCatalog() => Text('catalog'),
